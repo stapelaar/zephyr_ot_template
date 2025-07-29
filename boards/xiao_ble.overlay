@@ -1,0 +1,15 @@
+/ {
+    aliases {
+        onewire0 = &ow0;
+    };
+};
+
+&gpio1 {
+    ow0: onewire {
+        compatible = "w1-gpio";
+        status = "okay";
+        gpios = <&gpio1 15 GPIO_ACTIVE_HIGH>;
+        label = "1wire";
+    };
+};
+
